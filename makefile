@@ -13,6 +13,8 @@ package-uninstall:
 	python3 -m pip uninstall dist/hexlet_code-0.2.0-py3-none-ane.whl
 
 package-reinstall:
+	rm dist/*
+	poetry build
 	python3 -m pip install --user --force-reinstall dist/*.whl
 
 lint:
