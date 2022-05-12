@@ -10,7 +10,11 @@ jobs:
       - name: setup-python
         uses: actions/setup-python@v2
       - name: setup coverage
-        run: pip install poetry coverage  
+        run: 
+            pip install poetry coverage
+      - name: setup pytest
+        run: 
+            pip install pytest
       - name: run tests
         run: 
             coverage run -m pytest
