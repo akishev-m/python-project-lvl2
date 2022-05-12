@@ -9,8 +9,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup-python
         uses: actions/setup-python@v2
+      - name: setup coverage
+        run: pip install poetry coverage  
       - name: run tests
         run: 
-            pip install poetry coverage
             coverage run -m pytest
             
