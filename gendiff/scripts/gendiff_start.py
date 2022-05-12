@@ -2,12 +2,10 @@
 
 import argparse
 import json
-import pprint
 
 parser = argparse.ArgumentParser(
-        description="Compare two configuration files and show a difference.",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter
-        )
+    description="Compare two configuration files and show a difference.",
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument("first_file")
 parser.add_argument("second_file")
@@ -47,16 +45,14 @@ def generate_diff(first_dict, second_dict):
         else:
             diff = diff + '  - ' + key + make_addition(first_dict[key])
             diff = diff + '  + ' + key + make_addition(second_dict[key])
-    diff = diff + '{'
+    diff = diff + '}'
+    result_file = open("../result.txt", "w+")
+    result_file.write(diff)
+    result_file.close
     return diff
 
 
 def main():
-    print(first_file)
-    pprint.pprint(first_f, width=40)
-    print(second_file)
-    pprint.pprint(second_f, width=40)
-    print('Difference')
     print(generate_diff(first_f, second_f))
 
 

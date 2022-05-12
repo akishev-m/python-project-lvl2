@@ -14,4 +14,8 @@ jobs:
             pip install poetry
             make install
             make lint
- 
+      - name: run tests
+        run:
+            pip install pytest
+            pytest
+            

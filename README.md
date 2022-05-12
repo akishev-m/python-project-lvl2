@@ -1,6 +1,9 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/akishev-m/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/akishev-m/python-project-lvl2/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/akishev-m/python-project-lvl2)
+### Codeclimate badge:
+[![Maintainability](https://api.codeclimate.com/v1/badges/6ad72bb9757dd65d3a4e/maintainability)](https://codeclimate.com/github/akishev-m/python-project-lvl2/maintainability)
+### Test Coverage Badge:
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6ad72bb9757dd65d3a4e/test_coverage)](https://codeclimate.com/github/akishev-m/python-project-lvl2/test_coverage)
 ### linter workflow badge
 ![linter](https://github.com/akishev-m/python-project-lvl2/actions/workflows/github-lint.yml/badge.svg)
 
