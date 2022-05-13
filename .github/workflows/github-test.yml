@@ -3,32 +3,30 @@ name: tests
 on: push
 
 jobs:
-  runs-on: ubuntu-latest
+  tests:
+    runs-on: ubuntu-latest
     steps:
-      basic check:
-        - uses: actions/checkout@v2
-        - name: setup-python
-          uses: actions/setup-python@v2
-      result test:
-          - name: setup pytest
-            run:
-               pip install pytest
-          - name: Run result test
-            run:
-              pytest
-      coverage:
-          - name: setup coverage
-            run:
-                pip install poetry coverage
-          - name: Run result test
-            run:
-                pytest
-          - name: Run test & publish code coverage
-            run: |
-              make test-coverage
-          - name: make report
-            uses: paambaati/codeclimate-action@v2.7.5
-            env:
-                CC_TEST_REPORTER_ID: d4c9fd0e071f6f8b7bc4ffeeea0109f91e5bf522fc938dd2368f3aa33f05f7e8
-            with:
-              coverageCommand: make coverage
+      - uses: actions/checkout@v2
+      - name: setup-python
+        uses: actions/setup-python@v2
+      - name: setup pytest
+        run:
+            pip install pytest
+      - name: run result test
+        run:
+          pytest
+      - name: setup coverage
+        run:
+            pip install poetry coverage
+      - name: Run result test
+        run:
+            pytest
+      - name: run & publish code coverage test
+        run: |
+          make test-coverage
+      - name: make report
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+            CC_TEST_REPORTER_ID: d4c9fd0e071f6f8b7bc4ffeeea0109f91e5bf522fc938dd2368f3aa33f05f7e8
+        with:
+          coverageCommand: make coverage
