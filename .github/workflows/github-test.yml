@@ -3,7 +3,7 @@ name: tests
 on: push
 
 jobs:
-  linter:
+  coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,7 +15,10 @@ jobs:
       - name: setup pytest
         run: 
             pip install pytest
-      - name: run tests
-        run: 
-            coverage run -m pytest
+      - name: Run test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.6.0
+        env:
+          CC_TEST_REPORTER_ID: $ {{ secrets.d4c9fd0e071f6f8b7bc4ffeeea0109f91e5bf522fc938dd2368f3aa33f05f7e8}}
+          with:
+            coverageCommand: make test-coverage        
             
