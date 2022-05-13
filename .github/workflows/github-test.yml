@@ -15,6 +15,9 @@ jobs:
       - name: setup coverage
         run:
             pip install poetry coverage
+      - name: Run result test
+        run:
+            pytest
       - name: Run test & publish code coverage
         run: |
           make test-coverage
