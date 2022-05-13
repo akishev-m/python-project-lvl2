@@ -7,13 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: setup-python
+        uses: actions/setup-python@v2
       - name: setup pytest
-        run: pip install pytest
+        run: 
+            pip install pytest
       - name: setup coverage
-        run: pip install poetry coverage
+        run:
+            pip install poetry coverage
       - name: Run test & publish code coverage
-      - uses: paambaati/codeclimate-action@v2.6.0
+        uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: $ {{ secrets.d4c9fd0e071f6f8b7bc4ffeeea0109f91e5bf522fc938dd2368f3aa33f05f7e8}}
         with:
