@@ -3,15 +3,21 @@ name: tests
 on: push
 
 jobs:
-  coverage:
-    runs-on: ubuntu-latest
-    steps:
+  runs-on: ubuntu-latest
+    setup:
       - uses: actions/checkout@v2
       - name: setup-python
         uses: actions/setup-python@v2
+  result test:
+    steps:
       - name: setup pytest
         run:
             pip install pytest
+      - name: Run result test
+        run:
+            pytest
+  coverage:
+    steps:
       - name: setup coverage
         run:
             pip install poetry coverage
