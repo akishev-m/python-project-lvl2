@@ -20,5 +20,8 @@ package-reinstall:
 lint:
 	poetry run flake8 gendiff
 
-test-coverage:
+coverage:
 	poetry run coverage xml
+
+test-coverage:
+	poetry run coverage run -m pytest -v
