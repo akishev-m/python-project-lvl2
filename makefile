@@ -25,3 +25,6 @@ coverage:
 
 test-coverage:
 	poetry run coverage run -m pytest -v
+
+test:
+	python3 ./gendiff/scripts/gendiff_start.py ./gendiff/tests/fixtures/file1.yml ./gendiff/tests/fixtures/file2.yml
