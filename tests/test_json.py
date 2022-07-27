@@ -3,8 +3,8 @@
 import os
 
 def test_json():
-    expected_result = open(os.path.join(os.getcwd(), 'fixtures', 'expected_json.txt'), "r").read()
-    result = open(os.path.join(os.getcwd(), '../', 'result.txt'), "r").read()
+    expected_result = open(os.path.join(os.getcwd(), 'tests', 'fixtures', 'expected_json.txt'), "r").read()
+    result = open(os.path.join(os.getcwd(), 'result.txt'), "r").read()
 
     assert result == expected_result
 
